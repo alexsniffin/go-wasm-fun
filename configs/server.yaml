@@ -1,0 +1,17 @@
+Environment: "localhost"
+Logger:
+  Level: "debug"
+HTTPRouter:
+  TimeoutSec: 30
+  AllowedOrigins:
+    - "*"
+  AllowedMethods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "DELETE"
+    - "OPTIONS"
+  AllowedHeaders:
+    - "*"
+HTTPServer:
+  Port: 9090
