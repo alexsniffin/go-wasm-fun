@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 
 	"github.com/alexsniffin/website/internal/server/models"
@@ -29,6 +30,15 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(2)
+	}
+
+	if port, ok := os.LookupEnv("PORT"); ok {
+		p, err := strconv.Atoi(port)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(2)
+		}
+		newCfg.HTTPServer.Port = p
 	}
 
 	newLogger.Info().Msg("setting up server")

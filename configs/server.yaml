@@ -14,4 +14,4 @@ HTTPRouter:
   AllowedHeaders:
     - "*"
 HTTPServer:
-  Port: 9090
+  Port: 8080
